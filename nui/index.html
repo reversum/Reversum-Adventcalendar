@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(https://fonts.googleapis.com/css?family=Oleo+Script);
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    font-family: 'Roboto';
+    overflow: hidden;
+}
+
+body,
+html {
+    height: 100%;
+    display: grid;
+}
+
+#submit {
+    transition: 500ms;
+    top: 15px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 32px;
+    min-width: 114px;
+    height: 36px;
+    opacity: 0.9;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #E92C2C;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.4), 0 2px 2px 0 rgba(0, 0, 0, 0.34), 0 1px 5px 0 rgba(0, 0, 0, 0.32);
+}
+
+#submit:hover {
+    transition: 500ms;
+    color: #333333;
+}
+
+b {
+    color: #E92C2C;
+}
+
+#submit:focus {
+    outline: none;
+}
+
+#cancel:focus {
+    outline: 20px;
+}
+
+#cancel:hover {
+    transition: 500ms;
+    transform: scale(1.15);
+}
+
+#cancel {
+    top: 15px;
+    margin-left: 30px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #E92C2C;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #E92C2C;
+}
+
+#title {
+    text-align: center;
+    color: #E92C2C;
+    font-size: 33px;
+    font-weight: 500;
+    background: #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#description {
+    margin-left: 50px;
+    text-align: left;
+    margin-top: -15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+#box {
+  background: url("background.png");
+
+    margin: auto;
+    transition: 300ms;
+	height: 40rem;
+    width: 100rem;
+	outline: 3px solid rgba(255, 0, 0, .6);
+    text-align: center;
+    background-color: #232323;
+    font-size: 14px;
+    font-weight: 500;
+	border-bottom: 0.2vh solid red;
+	border-bottom-width: 0.5vh;
+		border-top: 0.4vh solid red;
+	border-top-width: 0.1vh;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.novi-overlay__content p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif!important
+}
+.novi-overlay__content {
+  text-align:center
+}
+h1 {
+  margin:0;
+  font-size:75px;
+  line-height: 75px;
+  text-align: center;
+  font-weight: 400;
+}
+
+ul {
+  margin:0 auto 30px auto;
+  padding:0;
+  list-style-type:none;
+  max-width:900px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
+}
+
+li {
+  font-weight: 400;
+  background-color: darkred;
+  box-sizing: border-box;
+  border-radius: 6px;
+  display: inline-block;
+  color:#111;
+  cursor:pointer;
+  font-size: 5px;
+  padding:1px;
+  margin:25px 12px;
+  width: 64px;
+  height:64px;
+  line-height: 70px;
+  text-align:center;
+  position: relative;
+  vertical-align:top;
+  user-select: none;
+  perspective: 800px;
+  transition: all 0.4s ease-in-out;
+}
+
+ul li:last-child {
+  background-size:cover;  
+  display:block;
+  clear:both;
+  margin: 20px auto 0 auto;
+  width: 100px;
+  height: 75px;
+}
+
+ul li:last-child .door {
+  font-size: 75px;
+  width: 100px;
+  height: 275px;
+  line-height: 80px;
+  
+}
+
+ul li:last-child .revealed {
+  line-height: 123px;
+}
+
+.door {
+  user-select: none;
+  color:#fff;
+  font-size: 50px;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: red;
+text-align: center;
+  width: 64px;
+  height:64px;
+  transition: all 0.4s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.current .door {
+  background-color: #7EAD44;
+}
+
+.current .door.open{
+  color: white;
+}
+
+.revealed {
+  user-select: none;
+}
+
+#message {
+  box-sizing: border-box;
+  color: #222;
+  display: none;
+  font-size: 24px;
+  padding: 20px;
+  background: #eddecb;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.open {
+  background-color: darkred;
+
+  box-shadow: 14px 0px 15px -1px rgba(0,0,0,0.2);
+  color: gray;
+}
+
+.jiggle {
+  animation: jiggle 0.2s infinite;
+  transform: rotate(-1deg);
+}
+
+.revealed img {width: 100%}
+
+@keyframes jiggle {
+  0% {
+        transform: rotate(-1deg);
+  }
+  50% {
+      transform: rotate(1deg);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  li {
+    margin:25px 20px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+	body {
+		background-size:150px;
+	}
+	
+	p {
+		right: 6%;
+		top: 20%;
+		bottom: auto; 
+		margin-left: auto;
+		left: auto;
+  }
+}
+    </style>
+
+ 
+
+</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<body>
+    <div id="box">
+        <p id="title">Adventskalender</p>
+
+  <div class="overlay-content" id="js-overlay-content" style="display: none;">
+  </div>
+
+  <ul>
+  <li><div class="door">1</div></li>
+  <li><div class="door">2</div></li>
+  <li><div class="door">3</div></li>
+  <li><div class="door">4</div></li>
+  <li><div class="door">5</div></li>
+  <li><div class="door">6</div></li>
+  <li><div class="door">7</div></li>
+  <li><div class="door">8</div></li>
+  <li><div class="door">9</div></li>
+  <li><div class="door">10</div></li>
+  <li><div class="door">11</div></li>
+  <li><div class="door">12</div></li>
+  <li><div class="door">13</div></li>
+  <li><div class="door">14</div></li>
+  <li><div class="door">15</div></li>
+  <li><div class="door">16</div></li>
+  <li><div class="door">17</div></li>
+  <li><div class="door">18</div></li>
+  <li><div class="door">19</div></li>
+  <li><div class="door">20</div></li>
+  <li><div class="door">21</div></li>
+  <li><div class="door">22</div></li>
+  <li><div class="door">23</div></li>
+  <li><div class="door">24</div></li>
+</ul>
+
+ <button id="submit">MÖGLICHE GESCHENKE ANZEIGEN</button>
+    </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
