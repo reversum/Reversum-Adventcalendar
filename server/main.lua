@@ -38,7 +38,7 @@ ESX.RegisterServerCallback('versuchetagzuoeffnen', function(source, cb)
 	local date_table = os.date("*t")
 	local day = date_table.day
 
-	MySQL.Async.fetchScalar('SELECT tag FROM users WHERE identifier = @identifier', {
+	MySQL.Async.fetchScalar('SELECT day FROM users WHERE identifier = @identifier', {
 		['@identifier'] = identifier
 	}, function(tag)
 		
@@ -47,9 +47,9 @@ ESX.RegisterServerCallback('versuchetagzuoeffnen', function(source, cb)
 		return
 
 	else
-	MySQL.Sync.execute('UPDATE users SET tag = @tag WHERE identifier = @identifier', {
+	MySQL.Sync.execute('UPDATE users SET day = @day WHERE identifier = @identifier', {
 		['@identifier'] = identifier,
-		['@tag'] = day
+		['@day'] = day
 	})
 
 	local gesamt = 0
